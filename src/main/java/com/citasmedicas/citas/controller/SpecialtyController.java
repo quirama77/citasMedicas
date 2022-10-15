@@ -4,6 +4,7 @@ import com.citasmedicas.citas.entities.Specialty;
 
 import com.citasmedicas.citas.service.SpecialtyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,7 +20,11 @@ public class SpecialtyController {
     public List<Specialty> getAll(){return  specialtyService.getAll();}
 
     @PostMapping("/save")
-    public Specialty save(@RequestBody Specialty d){return specialtyService.save(d);}
+    public ResponseEntity save(@RequestBody Specialty d){
+        specialtyService.save(d);
+        return ResponseEntity.status(201).build();
+
+    }
 
 
 }

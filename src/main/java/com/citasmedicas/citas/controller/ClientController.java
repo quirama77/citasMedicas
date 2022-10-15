@@ -4,6 +4,7 @@ package com.citasmedicas.citas.controller;
 import com.citasmedicas.citas.entities.Client;
 import com.citasmedicas.citas.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,8 +22,9 @@ public class ClientController {
     }
 
     @PostMapping("/save")
-    public Client save(@RequestBody Client c){
-        return clientService.save(c);
+    public ResponseEntity save(@RequestBody Client c){
+        clientService.save(c);
+        return ResponseEntity.status(201).build();
 
     }
 
