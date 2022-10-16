@@ -29,4 +29,17 @@ public class DoctorController {
 
 
     }
+
+    @PutMapping("/update")
+    public ResponseEntity update(@RequestBody Doctor d){
+        doctorService.update(d);
+        return ResponseEntity.status(201).build();
+
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity delete(@PathVariable Integer id){
+        doctorService.delete(id);
+        return ResponseEntity.status(204).build();
+    }
 }

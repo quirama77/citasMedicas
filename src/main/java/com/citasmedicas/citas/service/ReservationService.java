@@ -16,9 +16,12 @@ public class ReservationService {
     @Autowired
     private ReservationRepository reservationRepository;
 
+
     public List<Reservation> getAll(){return reservationRepository.getAll();}
 
+
     public Optional<Reservation> getReservation(int id){return reservationRepository.getReservation(id);}
+
 
     public Reservation save(Reservation r){
         if(r.getIdReservation()==null){

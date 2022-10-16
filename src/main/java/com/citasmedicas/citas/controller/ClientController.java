@@ -28,4 +28,18 @@ public class ClientController {
 
     }
 
+    @PutMapping("/update")
+    public  ResponseEntity update(@RequestBody Client c){
+        clientService.update(c);
+        return ResponseEntity.status(201).build();
+
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity delete(@PathVariable Integer id){
+        clientService.delete(id);
+        return ResponseEntity.status(204).build();
+    }
+
+
 }

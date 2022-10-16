@@ -25,6 +25,22 @@ public class SpecialtyController {
         return ResponseEntity.status(201).build();
 
     }
+    @PutMapping ("/update")
+    public ResponseEntity update(@RequestBody Specialty s){
+        specialtyService.update(s);
+        return ResponseEntity.status(201).build();
+
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity delete(@PathVariable Integer id){
+        specialtyService.delete(id);
+        return ResponseEntity.status(204).build();
+    }
+
+
+
+
 
 
 }
