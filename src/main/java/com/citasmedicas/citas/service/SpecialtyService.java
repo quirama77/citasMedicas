@@ -22,6 +22,7 @@ public class SpecialtyService {
 
     public Specialty save(Specialty d){
         if(d.getId()==null){
+
             return specialtyRepository.save(d);
 
         }else {
