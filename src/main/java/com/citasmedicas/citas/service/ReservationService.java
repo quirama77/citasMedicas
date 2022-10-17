@@ -95,10 +95,9 @@ public class ReservationService {
         }else return new ArrayList<>();
     }
 
-    //public CountClient getTopClient(){
-
-
-    //}
+    public List<CountClient> getTopClients(){
+        return reservationRepository.getTopClients();
+    }
 
 
 }

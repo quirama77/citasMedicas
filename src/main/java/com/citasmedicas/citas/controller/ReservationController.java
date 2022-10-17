@@ -38,8 +38,8 @@ public class ReservationController {
 
     }
 
-    //@GetMapping("/report-clients")
-    //public List<CountClient> getTopClient(){return reservationService.getTopClients();}
+    @GetMapping("/report-clients")
+    public List<CountClient> getTopClient(){return reservationService.getTopClients();}
 
 
 
